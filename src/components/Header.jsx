@@ -1,13 +1,14 @@
 import React from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { RiNotification2Line } from "react-icons/ri"; // Import the icon
 import { useDispatch } from "react-redux";
 import { setShowSidebar } from "../utils/appSlice";
-import { YOUTUBE_LOGO, NOTIFICATION_IMG, USER_IMG } from "../utils/constants";
+import { YOUTUBE_LOGO, USER_IMG } from "../utils/constants";
 import { useNavigate } from "react-router-dom";
 import useSearch from "../hooks/useSearch"; // Custom hook
 
 const Header = () => {
-    const {searchText,setSearchText, suggestedResults,showSuggestion,setShowSuggestion,selectedQuery,setSelectedQuery} = useSearch();
+    const {searchText, setSearchText, suggestedResults, showSuggestion, setShowSuggestion, setSelectedQuery} = useSearch();
     
     const dispatch = useDispatch();
     const navigate = useNavigate();
@@ -17,7 +18,7 @@ const Header = () => {
     };
 
     return (
-        <div className="p-1 flex justify-between shadow-md fixed top-0 left-0 w-full z-20 bg-black">
+        <div className="p-1 flex justify-between shadow-md fixed top-0 left-0 w-full z-20 bg-black px-4">
             <div className="flex gap-4 items-center">
                 <div className="relative group">
                     <div className="flex items-center justify-center h-20 w-12 rounded-full bg-transparent group-hover:bg-gray-200 transition-colors duration-300">
@@ -86,9 +87,9 @@ const Header = () => {
                 )}
             </div>
 
-            <div className="w-10 flex mt-5 mr-16 gap-4">
-                <img className="h-8 cursor-pointer" src={NOTIFICATION_IMG} alt="notif-img" />
-                <img className="h-8 cursor-pointer" src={USER_IMG} alt="user" />
+            <div className="w-20 flex mt-5  gap-4">
+            <RiNotification2Line className="h-8 w-8 text-white cursor-pointer" />
+            <img className="h-8 cursor-pointer" src={USER_IMG} alt="user" />
             </div>
         </div>
     );

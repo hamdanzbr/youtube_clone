@@ -8,6 +8,7 @@ import { RiShareForwardLine } from "react-icons/ri";
 import CommentSection from "../components/CommentSection"; // Adjust path as needed
 import RelatedVideos from "../components/RelatedVideos"; // New component
 import useVideoData from "../hooks/useVideoData";
+import ShimmerCard from "./SimmerCard";
 
 const Watch = () => {
     const [params] = useSearchParams();
@@ -21,7 +22,11 @@ const Watch = () => {
         dispatch(closeSidebar());
     }, []);
 
-    if (!videoDetails || !comments || !relatedVideos) return null;
+    if (!videoDetails || !comments || !relatedVideos) return (
+    <div className="h-screen">
+        <ShimmerCard/>
+        </div>
+        )
 
     const { snippet, statistics } = videoDetails;
     const { title, publishedAt, description, channelTitle } = snippet;

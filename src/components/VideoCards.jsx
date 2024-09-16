@@ -49,7 +49,7 @@ const VideoCard = ({ info }) => {
 
                     {/* View Count and Date */}
                     <p className="text-xs text-white">
-                        {formatViewCount(viewCount)} • {daysAgo} days ago
+                        {formatViewCount(viewCount)} • {daysAgo} 
                     </p>
                 </div>
             </div>

@@ -7,7 +7,8 @@ const videoSlice=createSlice({
         comments:null,
         relatedVideos:null,
         playingVideo:null,
-        searchVideos:null
+        searchVideos:null,
+        liveVideos:null
     },
     reducers:{
         addHomeVideoList:(state,action)=>{
@@ -25,6 +26,9 @@ const videoSlice=createSlice({
         addSearchVideos:(state,action)=>{
             state.searchVideos=action.payload
         },
+        addLiveVideos:(state,action)=>{
+            state.liveVideos=action.payload
+        },
         resetVideoData: (state) => {
             state.comments = null;
             state.relatedVideos = null;
@@ -36,6 +40,6 @@ const videoSlice=createSlice({
     }
 })
 
-export const{addHomeVideoList,addCommentsList,addRelatedVideosList,addCurrentPlayingVideo,addSearchVideos,resetVideoData,resetSearchData}=videoSlice.actions;
+export const{addHomeVideoList,addCommentsList,addRelatedVideosList,addCurrentPlayingVideo,addSearchVideos,addLiveVideos,resetVideoData,resetSearchData}=videoSlice.actions;
 
 export default videoSlice.reducer 

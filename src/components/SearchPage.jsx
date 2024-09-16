@@ -13,8 +13,7 @@ const SearchPage = () => {
     },[])
 if(!searchVideos) return null
     return (
-        <div className="search-page">
-            {/* You can customize this page further */}
+        <div className="p-20">
             <RelatedVideos videos={searchVideos} />
         </div>
     );

@@ -12,7 +12,7 @@ const RelatedVideos = ({ videos }) => {
             <h3 className="text-lg font-bold mb-4 text-white">Related Videos</h3>
             <div className="space-y-4">
                 {videos.map((video, index) => (
-                    <Link  to={'/watch?v=' + video.id.videoId}>
+                    <Link key={index} to={'/watch?v=' + video.id.videoId}>
 
                         <div className="flex space-x-4">
                             <img

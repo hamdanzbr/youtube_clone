@@ -9,6 +9,7 @@ import { MdWifiTethering, MdOutlineHistory, MdOutlinePlaylistPlay, MdOutlineWatc
 import { PiFilmSlateBold } from 'react-icons/pi';
 import { SiYoutubegaming, SiYoutubeshorts } from 'react-icons/si';
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 const Sidebar = () => {
   const sidebarStatus = useSelector((store) => store.app.sidebar);
@@ -38,7 +39,7 @@ const Sidebar = () => {
           </li>
           <li className="hover:bg-gray-500 rounded flex items-center p-2">
             <MdWifiTethering />
-            <span className="ml-2">Live</span>
+            <span className="ml-2"><Link to={'/live'}>Live</Link></span>
           </li>
           <li className="hover:bg-gray-500 rounded flex items-center p-2">
             <HiOutlineTrendingUp />

@@ -7,6 +7,8 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import MainContainer from './components/MainContainer';
 import Watch from './components/Watch';
 import SearchPage from './components/SearchPage';
+import Live from './components/Live';
+import LiveStream from './components/LiveStream';
 
 function App() {
   const appRouter = createBrowserRouter([
@@ -31,6 +33,14 @@ function App() {
           path: '/search',
           element: <SearchPage />,
         },
+        {
+          path: '/live',
+          element: <Live/>,
+        },
+        {
+          path:'/livestream',
+          element: <LiveStream/>
+        }
       ],
     },
   ]);

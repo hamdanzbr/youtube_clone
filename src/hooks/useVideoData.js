@@ -69,7 +69,7 @@ const useVideoData = (id) => {
         comments,
         relatedVideos,
         videoDetails,
-        videoPlayerUrl: `${EMBEDDED_URL}${id}?&autoplay=1`,
+        videoPlayerUrl: `${EMBEDDED_URL}${id}?&autoplay=1&mute=1`,
     };
 };
 
