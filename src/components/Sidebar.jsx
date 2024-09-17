@@ -17,7 +17,7 @@ const Sidebar = () => {
   if (!sidebarStatus) return null;
 
   return (
-    <div className="w-64 shadow-lg py-2 bg-black text-white fixed top-20 left-0 h-[calc(100vh-5rem)] overflow-y-auto z-10">
+    <div className=" w-64 shadow-lg py-2 bg-black text-white fixed top-20 left-0 h-[calc(100vh-5rem)] overflow-y-auto z-10">
       {/* Top Section */}
       <div className="p-2 pl-4">
         <ul className="text-lg">

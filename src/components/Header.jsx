@@ -26,7 +26,7 @@ const Header = () => {
                     </div>
                 </div>
 
-                <div className="flex items-center">
+                <div className="flex items-center"> 
                     <a href="/">
                         <img className="h-20 cursor-pointer" src={YOUTUBE_LOGO} alt="youtube logo" />
                     </a>
@@ -44,7 +44,10 @@ const Header = () => {
                     onBlur={() => setShowSuggestion(false)}
                 />
 
-                <button className="px-4 py-2 bg-gray-900 border border-gray-300 rounded-r-full hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <button className="px-4 py-2 bg-gray-900 border border-gray-300 rounded-r-full hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500" onClick={()=>{
+                    setSelectedQuery(searchText)
+                    navigate('/search')
+                }}>
                     <svg
                         className="w-5 h-6 text-white"
                         fill="currentColor"
