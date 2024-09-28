@@ -1,10 +1,9 @@
 // src/components/RelatedVideos.jsx
 import React from 'react';
 import { dayDifference } from '../utils/constants';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 
 const RelatedVideos = ({ videos }) => {
-    const navigate=useNavigate()
     dayDifference()
     return (
         <div>
@@ -26,7 +25,7 @@ const RelatedVideos = ({ videos }) => {
                             </div>
                         </div>
                     </Link>
-                ))} 
+                ))}
 
             </div>
         </div>
