@@ -11,43 +11,48 @@ import Live from './components/Live';
 import LiveStream from './components/LiveStream';
 
 function App() {
-  const appRouter = createBrowserRouter([
+  const appRouter = createBrowserRouter(
+    [
+      {
+        path: '/',
+        element: (
+          <>
+            <Header /> {/* Header stays fixed and visible */}
+            <Body />
+          </>
+        ),
+        children: [
+          {
+            path: '/',
+            element: <MainContainer />,
+          },
+          {
+            path: '/watch',
+            element: <Watch />,
+          },
+          {
+            path: '/search',
+            element: <SearchPage />,
+          },
+          {
+            path: '/live',
+            element: <Live />,
+          },
+          {
+            path: '/livestream',
+            element: <LiveStream />,
+          },
+        ],
+      },
+    ],
     {
-      path: '/',
-      element: (
-        <>
-          <Header /> {/* Header stays fixed and visible */}
-          <Body />
-        </>
-      ),
-      children: [
-        {
-          path: '/',
-          element: <MainContainer />,
-        },
-        {
-          path: '/watch',
-          element: <Watch />,
-        },
-        {
-          path: '/search',
-          element: <SearchPage />,
-        },
-        {
-          path: '/live',
-          element: <Live/>,
-        },
-        {
-          path:'/livestream',
-          element: <LiveStream/>
-        }
-      ],
-    },
-  ]);
+      basename: '/youtube_clone', // Add the basename for GitHub Pages
+    }
+  );
 
   return (
     <Provider store={appStore}>
-      <RouterProvider  router={appRouter}  />
+      <RouterProvider router={appRouter} />
     </Provider>
   );
 }
